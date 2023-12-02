@@ -1,0 +1,76 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Excel1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          businessentityid as string,",
+				"          nationalidnumber as string,",
+				"          loginid as string,",
+				"          organizationnode as string,",
+				"          organizationlevel as string,",
+				"          jobtitle as string,",
+				"          birthdate as string,",
+				"          maritalstatus as string,",
+				"          gender as string,",
+				"          hiredate as string,",
+				"          salariedflag as string,",
+				"          vacationhours as string,",
+				"          sickleavehours as string,",
+				"          currentflag as string,",
+				"          modifieddate as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          businessentityid as integer,",
+				"          nationalidnumber as integer,",
+				"          loginid as string,",
+				"          organizationnode as string,",
+				"          organizationlevel as integer,",
+				"          jobtitle as string,",
+				"          birthdate as date,",
+				"          maritalstatus as string,",
+				"          gender as string,",
+				"          hiredate as date,",
+				"          salariedflag as boolean,",
+				"          vacationhours as integer,",
+				"          sickleavehours as integer,",
+				"          currentflag as boolean,",
+				"          modifieddate as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+			]
+		}
+	}
+}

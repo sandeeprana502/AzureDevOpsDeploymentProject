@@ -1,0 +1,90 @@
+{
+	"name": "Excelinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Copy_file_to_another_folder_dataset"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "DatabaseData.xlsx",
+				"container": "inputfolder"
+			},
+			"sheetIndex": 0,
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "businessentityid",
+				"type": "String"
+			},
+			{
+				"name": "nationalidnumber",
+				"type": "String"
+			},
+			{
+				"name": "loginid",
+				"type": "String"
+			},
+			{
+				"name": "organizationnode",
+				"type": "String"
+			},
+			{
+				"name": "organizationlevel",
+				"type": "String"
+			},
+			{
+				"name": "jobtitle",
+				"type": "String"
+			},
+			{
+				"name": "birthdate",
+				"type": "String"
+			},
+			{
+				"name": "maritalstatus",
+				"type": "String"
+			},
+			{
+				"name": "gender",
+				"type": "String"
+			},
+			{
+				"name": "hiredate",
+				"type": "String"
+			},
+			{
+				"name": "salariedflag",
+				"type": "String"
+			},
+			{
+				"name": "vacationhours",
+				"type": "String"
+			},
+			{
+				"name": "sickleavehours",
+				"type": "String"
+			},
+			{
+				"name": "currentflag",
+				"type": "String"
+			},
+			{
+				"name": "rowguid",
+				"type": "String"
+			},
+			{
+				"name": "modifieddate",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

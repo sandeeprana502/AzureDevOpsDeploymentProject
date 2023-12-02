@@ -1,0 +1,86 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Copy_file_from_storage_to_sql_database"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "businessentityid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "nationalidnumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "loginid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "organizationnode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "organizationlevel",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "jobtitle",
+				"type": "nvarchar"
+			},
+			{
+				"name": "birthdate",
+				"type": "date"
+			},
+			{
+				"name": "maritalstatus",
+				"type": "nvarchar"
+			},
+			{
+				"name": "gender",
+				"type": "nvarchar"
+			},
+			{
+				"name": "hiredate",
+				"type": "date"
+			},
+			{
+				"name": "salariedflag",
+				"type": "bit"
+			},
+			{
+				"name": "vacationhours",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "sickleavehours",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "currentflag",
+				"type": "bit"
+			},
+			{
+				"name": "modifieddate",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Demo"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

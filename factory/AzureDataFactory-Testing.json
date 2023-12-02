@@ -1,0 +1,9 @@
+{
+	"name": "AzureDataFactory-Testing",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2155d55d-c57e-4536-868c-e8fa5e3df729",
+		"tenantId": "b518aee8-d6c0-4825-8fca-39cce6de24a2"
+	}
+}
